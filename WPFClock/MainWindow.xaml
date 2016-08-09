@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPFClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClock"
+        mc:Ignorable="d"
+        Title="Proto-Clock" Height="150" Width="400">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="HoursBox" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleHours" Unchecked="HandleHours"/>
+        <Label x:Name="HoursLabel" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Hours"/>
+        <CheckBox x:Name="MinutesBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleMinutes" Unchecked="HandleMinutes"/>
+        <Label x:Name="MinutesLabel" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Minutes"/>
+        <CheckBox x:Name="SecondsBox" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleSeconds" Unchecked="HandleSeconds"/>
+        <Label x:Name="SecondsLabel" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Seconds"/>
+        <CheckBox x:Name="MillisecondsBox" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleMilliseconds" Unchecked="HandleMilliseconds"/>
+        <Label x:Name="MillisecondsLabel" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Milliseconds"/>
+
+        <Label x:Name="HoursDisplay" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="MinutesDisplay" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="SecondsDisplay" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="MillisecondsDisplay" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="000"/>
+
+    </Grid>
+</Window>
