@@ -22,16 +22,13 @@ namespace WPFClock
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Clock ticker;
+        private Clock ticker = new Clock();
 
         private delegate void NoArg();
 
         public MainWindow()
         {
-            
             InitializeComponent();
-
-            ticker = new Clock();
 
             /*
              * We could also use the Action type instead of NoArg and save some code.  
