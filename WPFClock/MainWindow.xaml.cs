@@ -48,12 +48,13 @@ namespace WPFClock
              *  All the Dispatch/BeginInvoke magic happens here in the client code.
              * 
              */
-             
+            
+            /* 
             ticker.MillisecondChanged += Ticker_MillisecondsChangedOnDifferentThread;
             ticker.SecondChanged += Ticker_SecondsChangedOnDifferentThread;
             ticker.MinuteChanged += Ticker_MinutesChangedOnDifferentThread;
             ticker.HourChanged += Ticker_HoursChangedOnDifferentThread;
-
+            */
             start.BeginInvoke(null, null);
             
         }
@@ -93,7 +94,7 @@ namespace WPFClock
              * Here's where the Clock's thread will put a message on the UI thread's queue of work,
              * again, through the use of a delegate
              */
-            MillisecondsDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateMilliseconds), currentTime % Clock.MILLISECONDS_IN_SECOND);
+            MillisecondsDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateMilliseconds), currentTime);
         }
         private void Ticker_SecondsChangedOnDifferentThread(int currentTime)
         {
@@ -101,7 +102,7 @@ namespace WPFClock
              * Here's where the Clock's thread will put a message on the UI thread's queue of work,
              * again, through the use of a delegate
              */
-            SecondsDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateSeconds), currentTime % Clock.SECONDS_IN_MINUTE);
+            SecondsDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateSeconds), currentTime);
         }
         private void Ticker_MinutesChangedOnDifferentThread(int currentTime)
         {
@@ -109,7 +110,7 @@ namespace WPFClock
              * Here's where the Clock's thread will put a message on the UI thread's queue of work,
              * again, through the use of a delegate
              */
-            SecondsDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateMinutes), currentTime % Clock.MINUTES_IN_HOUR);
+            MinutesDisplay.Dispatcher.BeginInvoke(new Action<int>(Ticker_UpdateMinutes), currentTime);
         }
         private void Ticker_HoursChangedOnDifferentThread(int currentTime)
         {
@@ -123,7 +124,8 @@ namespace WPFClock
         private void HandleHours(object sender, RoutedEventArgs e)
         {
             CheckBox box = sender as CheckBox;
-            HoursDisplay.Dispatcher.BeginInvoke(new Action<bool?>(ManageHourWiring), box.IsChecked);
+            ManageHourWiring(box.IsChecked);
+            //HoursDisplay.Dispatcher.BeginInvoke(new Action<bool?>(ManageHourWiring), box.IsChecked);
         }
         private void ManageHourWiring(bool? flag)
         {
@@ -139,7 +141,8 @@ namespace WPFClock
         private void HandleMinutes(object sender, RoutedEventArgs e)
         {
             CheckBox box = sender as CheckBox;
-            MinutesDisplay.Dispatcher.BeginInvoke(new Action<bool?>(ManageMinuteWiring), box.IsChecked);
+            ManageMinuteWiring(box.IsChecked);
+            //MinutesDisplay.Dispatcher.Invoke(new Action<bool?>(ManageMinuteWiring), box.IsChecked);
         }
         private void ManageMinuteWiring(bool? flag)
         {
@@ -156,7 +159,8 @@ namespace WPFClock
         private void HandleSeconds(object sender, RoutedEventArgs e)
         {
             CheckBox box = sender as CheckBox;
-            SecondsDisplay.Dispatcher.BeginInvoke(new Action<bool?>(ManageSecondWiring), box.IsChecked);
+            ManageSecondWiring(box.IsChecked);
+            //SecondsDisplay.Dispatcher.Invoke(new Action<bool?>(ManageSecondWiring), box.IsChecked);
         }
         private void ManageSecondWiring(bool? flag)
         {
@@ -173,7 +177,8 @@ namespace WPFClock
         private void HandleMilliseconds(object sender, RoutedEventArgs e)
         {
             CheckBox box = sender as CheckBox;
-            MillisecondsDisplay.Dispatcher.BeginInvoke(new Action<bool?>(ManageMillisecondWiring), box.IsChecked);
+            ManageMillisecondWiring(box.IsChecked);
+            //MillisecondsDisplay.Dispatcher.Invoke(new Action<bool?>(ManageMillisecondWiring), box.IsChecked);
         }
         private void ManageMillisecondWiring(bool? flag)
         {

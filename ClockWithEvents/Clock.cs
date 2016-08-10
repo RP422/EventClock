@@ -21,7 +21,8 @@ namespace ClockWithEvents
 
         public const int MILLISECONDS_IN_SECOND = 1000;
         public const int SECONDS_IN_MINUTE = 5;
-        public const int MINUTES_IN_HOUR = 5;
+        public const int MINUTES_IN_HOUR = 3;
+        public const int HOURS_IN_DAY = 3;
 
         int milliseconds;
 
@@ -63,7 +64,7 @@ namespace ClockWithEvents
         {
             if (HourChanged != null)
             {
-                HourChanged.Invoke(milliseconds / (MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR));
+                HourChanged.Invoke(milliseconds / (MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR) % HOURS_IN_DAY);
             }
         }
 
@@ -71,7 +72,7 @@ namespace ClockWithEvents
         {
             if (MinuteChanged != null)
             {
-                MinuteChanged.Invoke(milliseconds / (MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE));
+                MinuteChanged.Invoke(milliseconds / (MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE) % MINUTES_IN_HOUR);
             }
         }
 
@@ -80,7 +81,7 @@ namespace ClockWithEvents
             if (SecondChanged != null)
             {
                 //this line is incorrect.  Fix it! :)
-                SecondChanged.Invoke(milliseconds / MILLISECONDS_IN_SECOND);
+                SecondChanged.Invoke(milliseconds / MILLISECONDS_IN_SECOND % SECONDS_IN_MINUTE);
             }
         }
 
@@ -88,7 +89,7 @@ namespace ClockWithEvents
         {
             if (MillisecondChanged != null)
             {
-                MillisecondChanged.Invoke(milliseconds);
+                MillisecondChanged.Invoke(milliseconds % MILLISECONDS_IN_SECOND);
             }
         }
     }

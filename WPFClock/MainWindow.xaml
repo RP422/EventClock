@@ -15,19 +15,19 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <CheckBox x:Name="HoursBox" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleHours" Unchecked="HandleHours"/>
-        <Label x:Name="HoursLabel" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Hours"/>
-        <CheckBox x:Name="MinutesBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleMinutes" Unchecked="HandleMinutes"/>
-        <Label x:Name="MinutesLabel" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Minutes"/>
-        <CheckBox x:Name="SecondsBox" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleSeconds" Unchecked="HandleSeconds"/>
-        <Label x:Name="SecondsLabel" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Seconds"/>
-        <CheckBox x:Name="MillisecondsBox" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,30" IsChecked="True" Checked="HandleMilliseconds" Unchecked="HandleMilliseconds"/>
-        <Label x:Name="MillisecondsLabel" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" FontSize="15" Content="Milliseconds"/>
+        <CheckBox x:Name="HoursBox" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,40" Checked="HandleHours" Unchecked="HandleHours" IsChecked="True"/>
+        <Label x:Name="HoursLabel" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,85" FontSize="15" Content="Hours"/>
+        <CheckBox x:Name="MinutesBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,40" Checked="HandleMinutes" Unchecked="HandleMinutes" IsChecked="True"/>
+        <Label x:Name="MinutesLabel" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,85" FontSize="15" Content="Minutes"/>
+        <CheckBox x:Name="SecondsBox" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,40" Checked="HandleSeconds" Unchecked="HandleSeconds" IsChecked="True"/>
+        <Label x:Name="SecondsLabel" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,85" FontSize="15" Content="Seconds"/>
+        <CheckBox x:Name="MillisecondsBox" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,40" Checked="HandleMilliseconds" Unchecked="HandleMilliseconds" IsChecked="True"/>
+        <Label x:Name="MillisecondsLabel" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,85" FontSize="15" Content="Milliseconds"/>
 
-        <Label x:Name="HoursDisplay" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
-        <Label x:Name="MinutesDisplay" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
-        <Label x:Name="SecondsDisplay" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="00"/>
-        <Label x:Name="MillisecondsDisplay" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="36" Content="000"/>
+        <Label x:Name="HoursDisplay" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,35,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="MinutesDisplay" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,35,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="SecondsDisplay" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,35,0,0" FontSize="36" Content="00"/>
+        <Label x:Name="MillisecondsDisplay" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,35,0,0" FontSize="36" Content="000"/>
 
     </Grid>
 </Window>
